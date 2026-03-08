@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Galeria de Álbuns Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>Galeria de Álbuns</h2>
+  <button id="adminBtn" class="login">Login Admin</button>
+</header>
+
+<div class="marquee-container">
+  <div id="marquee" class="marquee-text">Bem-vindo à nossa Galeria!</div>
+</div>
+
+<div class="container">
+
+  <!-- Painel Admin -->
+  <div id="adminPanel" class="panel hidden">
+    <h3>Painel Admin</h3>
+
+    <h4>Criar Novo Álbum</h4>
+    <input type="text" id="albumName" placeholder="Nome do Álbum">
+    <input type="text" id="albumUser" placeholder="Usuário do Álbum (opcional)">
+    <input type="password" id="albumPass" placeholder="Senha do Álbum (opcional)">
+    <button onclick="createAlbum()">Criar Álbum</button>
+
+    <h4>Editar Faixa de Texto</h4>
+    <input type="text" id="marqueeInput" placeholder="Texto da faixa">
+    <button onclick="updateMarquee()">Atualizar Faixa</button>
+
+    <h4>Papel de Parede</h4>
+    <input type="file" id="wallpaperFile" accept="image/*">
+    <button onclick="setWallpaper()">Aplicar Papel de Parede</button>
+
+    <button onclick="logout()" style="background:red;color:white;margin-top:10px;">Sair</button>
+  </div>
+
+  <!-- Lista de Álbuns -->
+  <div id="albumsGrid" class="grid"></div>
+
+  <!-- Galeria de Arquivos -->
+  <div id="gallery" class="grid hidden"></div>
+  <div id="galleryAdminControls" class="panel hidden">
+    <h4>Adicionar arquivos via URL</h4>
+    <textarea id="fileUrls" placeholder="Coloque uma URL por linha"></textarea>
+    <button onclick="addFilesToAlbum()">Adicionar Arquivos</button>
+    <button onclick="toggleDeleteMode()">Deletar Arquivos</button>
+    <button onclick="confirmDeleteFiles()">Apagar Selecionados</button>
+  </div>
+  <button id="backBtn" class="hidden" onclick="backToAlbums()">← Voltar aos Álbuns</button>
+
+</div>
+
+<!-- Modal Login do Álbum -->
+<div id="albumLoginModal" class="hidden">
+  <h4>Login Álbum</h4>
+  <input type="text" id="albumLoginUser" placeholder="Usuário">
+  <input type="password" id="albumLoginPass" placeholder="Senha">
+  <button onclick="confirmAlbumLogin()">Entrar</button>
+  <button onclick="closeAlbumLogin()" style="background:red;color:white;">Cancelar</button>
+</div>
+
+<!-- Modal Login Admin -->
+<div id="loginBox" class="panel hidden">
+  <h3>Login Admin</h3>
+  <input id="user" placeholder="usuário">
+  <input id="pass" type="password" placeholder="senha">
+  <button id="loginBtn">Entrar</button>
+  <button onclick="closeLogin()" style="background:red;color:white;">Cancelar</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+body{font-family:Arial,sans-serif;margin:0;background:#111;color:#fff;transition:0.5s}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px;background:#1e1e1e}
+button{padding:8px 12px;border:none;border-radius:6px;cursor:pointer;transition:0.2s}
+button:hover{opacity:0.8}
+.login{background:#3a7afe;color:white}
+.container{padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px}
+.card,.album-card{background:#1c1c1c;padding:10px;border-radius:10px;transition:0.3s;position:relative;text-align:center}
+.card:hover,.album-card:hover{transform:scale(1.02)}
+.card img,.card video,.album-card img{width:100%;border-radius:8px}
+.album-card img{height:150px;object-fit:cover}
+.album-buttons{position:absolute;top:5px;right:5px;display:flex;gap:5px}
+.album-buttons button{padding:3px 6px;font-size:12px;background:#3a7afe;color:white;border-radius:4px}
+.marquee-container{background:#1e1e1e;padding:5px;overflow:hidden;white-space:nowrap;margin-bottom:15px}
+.marquee-text{display:inline-block;padding-left:100%;animation:marquee 15s linear infinite}
+@keyframes marquee{0%{transform:translateX(0%)}100%{transform:translateX(-100%)}}
+#adminPanel,#galleryAdminControls,#loginBox,#albumLoginModal{background:#1c1c1c;padding:15px;border-radius:10px;margin-bottom:20px}
+.hidden{display:none}
+textarea{width:100%;height:80px;margin-bottom:10px;padding:5px;border-radius:5px;border:none}
+video{max-height:200px}
